@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/scrollmagic": "^2.0.8",
+    "gsap": "^3.12.5",
+    "scrollmagic": "^2.0.8"
+  }
+}

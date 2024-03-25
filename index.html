@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="icon" href="/images/favicon/mountain1.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Conteneur pour la barre de navigation et la section d'accueil -->
+    <div id="conteneur-fond">
+      <!-- Barre de navigation -->
+      <nav>
+        <h4 class="titre-nav">
+          <a href="#accueil"
+            >Tommy Epal<span class="point">.</span
+            ><span class="underscore">_</span></a
+          >
+        </h4>
+        <h4 class="titre-nav-court">
+          <a href="#accueil"
+            >T.E<span class="point">.</span><span class="underscore">_</span></a
+          >
+        </h4>
+        <ul>
+          <li><a class="nav-link" href="#accueil">/Home</a></li>
+          <li><a class="nav-link" href="#biographie">/Biographie</a></li>
+          <li><a class="nav-link" href="#competences">/Compétences</a></li>
+          <li><a class="nav-link" href="#projets">/Projets</a></li>
+          <li><a class="nav-link" href="#contact">/Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="contenu">
+      <!-- Section Accueil -->
+      <section id="accueil" class="scroll-blur">
+        <header>
+          <h1>Tommy Epal</h1>
+          <p>Développeur Web Full Stack</p>
+        </header>
+      </section>
+
+      <!-- Section Biographie -->
+      <section id="biographie" class="scroll-blur">
+        <img
+          src="/images/image_profil/Photo d'identité 1.png"
+          alt="image de profil"
+          class="image-profil"
+        />
+        <!-- Contenu de la section -->
+        <p>
+          Passionné par deux domaines distincts - la nature et l'informatique -
+          j’ai entamé mon parcours professionnel avec un diplôme en sciences,
+          axé principalement sur la géologie, la géophysique et l'étude de
+          l'environnement. Titulaire d'une licence et d'un master dans le
+          domaine scientifique, j'ai consacré quelques années à explorer les
+          mystères de la nature avant de donner une nouvelle orientation à ma
+          carrière en me plongeant dans le monde fascinant du développement web.
+          Après une période d'auto-formation intensive, d'une durée d'un an,
+          j'ai acquis des compétences solides dans le domaine, notamment en
+          HTML, CSS et Javascript.
+          <br />
+          <br />
+          Aujourd'hui, en tant que développeur web full stack, je m'épanouis
+          pleinement dans la création de projets innovants, aussi bien du côté
+          front end que du côté back end. Mon objectif est de continuer à allier
+          mes deux passions, en contribuant activement à des projets qui
+          intègrent les avancées technologiques tout en respectant
+          l'environnement qui m'inspire tant.
+        </p>
+      </section>
+
+      <!-- Section Compétences -->
+      <section id="competences" class="scroll-blur">
+        <div class="contenu-competences">
+          <h2>Compétences</h2>
+          <!-- Contenu de la section -->
+          <ul>
+            <li><i class="fas fa-code"></i>HTML5</li>
+            <li><i class="fas fa-code"></i>CSS3</li>
+            <li><i class="fas fa-code"></i>JavaScript</li>
+            <li><i class="fas fa-code-branch"></i>NodeJs</li>
+            <li><i class="fas fa-database"></i>Gestion de base de données</li>
+            <li><i class="fas fa-pen"></i>Figma</li>
+          </ul>
+        </div>
+        <img
+          src="/images/logos_competences/code-your-website-in-html-css-php-javascript.png"
+          alt="Description de l'image"
+          class="image-cadre"
+        />
+      </section>
+
+      <!-- Section Projets -->
+      <section id="projets" name="projets" class="scroll-blur">
+        <h2>Mes Projets</h2>
+        <!-- Contenu de la section -->
+        <div class="conteneur-vignettes">
+          <div class="vignette-projet" data-projet="projet1">
+            <div class="image-container">
+              <img src="/images/screenshots/mh.png" alt="Projet 1" />
+            </div>
+            <h3>Site Statique</h3>
+          </div>
+          <!-- Ajoutez plus de vignettes de projets ici -->
+          <div class="vignette-projet" data-projet="projet2">
+            <div class="image-container">
+              <img src="/images/screenshots/weatherapp.png" alt="Projet 2" />
+            </div>
+            <h3>Application Météo</h3>
+          </div>
+          <div class="vignette-projet" data-projet="projet3">
+            <div class="image-container">
+              <img src="/images/vignettes/vignette_3_JS.png" alt="Projet 3" />
+            </div>
+            <h3>Exercices Javascript</h3>
+          </div>
+          <div class="vignette-projet" data-projet="projet4">
+            <div class="image-container">
+              <img
+                src="/images/vignettes/vignette_4_NodeJS_2.png"
+                alt="Projet 4"
+              />
+            </div>
+            <h3>Création d'une API Rest</h3>
+          </div>
+          <div class="vignette-projet" data-projet="projet5">
+            <div class="image-container">
+              <img
+                src="/images/screenshots/jsamazona/jsamazona_1.png"
+                alt="Projet 5"
+              />
+            </div>
+            <h3>Site e-commerce</h3>
+          </div>
+          <div class="vignette-projet" data-projet="projet6">
+            <div class="image-container">
+              <img
+                src="/images/vignettes/les_connexions_old_2.png"
+                alt="Projet 6"
+              />
+            </div>
+            <h3>Les Connexions - site associatif</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Contact -->
+      <section id="contact" class="scroll-blur">
+        <h2>Contact</h2>
+        <p class="intro-text-contact">
+          Disponible pour les opportunités en entreprise et en Freelance.
+        </p>
+        <p>
+          Vous avez un projet passionnant pour lequel vous avez besoin d'aide ?
+          <br />
+          Envoyez-moi un e-mail ou remplissez le formulaire ci-dessous !
+        </p>
+        <div class="contact-info">
+          <div>
+            <a href="mailto:tommyepal@gmail.com">
+              <svg
+                class="svg-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+                />
+              </svg>
+              tommyepal@gmail.com
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/Epalito">
+              <svg
+                class="svg-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 496 512"
+              >
+                <path
+                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                />
+              </svg>
+              Github
+            </a>
+            <a href="https://www.linkedin.com/in/tommy-epal-b7350722a/">
+              <svg
+                class="svg-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+                />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <form>
+          <input type="text" name="name" placeholder="Votre nom" required />
+          <input type="email" name="email" placeholder="Votre email" required />
+          <textarea
+            name="message"
+            placeholder="Votre message"
+            required
+          ></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Onglets de projets (masqués par défaut) -->
+
+    <div id="projet1" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Site Statique</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            Projet de Site Statique Personnel :
+            <br />
+            <br />
+            • Objectif : Reproduire un site connu en utilisant mes compétences
+            en HTML/CSS acquises au cours de mon auto-formation, tout en le
+            faisant évoluer progressivement avec des ajouts divers.
+            <br />
+            • Les différents éléments du site sont interactifs, avec des effets
+            de survol et un carrousel fonctionnel offrant à la fois un switch
+            manuel et automatique.
+            <br />
+            • Les logos et les images sont des liens redirigeant vers des pages
+            officielles, ajoutant une dimension fonctionnelle au site.
+            <br />
+            • Le site est conçu de manière à être responsive, garantissant une
+            expérience utilisateur optimale sur différentes tailles d'écrans. Ce
+            projet m'a permis d'appliquer concrètement mes connaissances en
+            développement web et de renforcer mes compétences en conception de
+            sites interactifs et adaptatifs.
+          </p>
+        </div>
+        <div class="projet-images">
+          <img src="/images/screenshots/mh.png" alt="Projet 1" />
+        </div>
+      </div>
+    </div>
+    <div id="projet2" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Application Météo</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            Création d'une Application Météo :
+            <br />
+            <br />
+            • Objectif : Mettre en pratique des fonctions Javascript plus
+            complexes tout en se familiarisant avec la récupération de données
+            d'API, l'interface utilisateur, et les connexions nécessaires.
+            <br />
+            • Le projet s'inscrit dans une démarche d'apprentissage et
+            d'application concrète des compétences en Javascript. <br />
+            • En plus des aspects techniques, une attention particulière a été
+            portée au design pour assurer une expérience utilisateur moderne et
+            agréable. <br />
+            Ce projet m'a permis de consolider mes compétences en programmation
+            Javascript, d'explorer l'intégration d'API pour des données en temps
+            réel, et de travailler sur l'aspect visuel pour créer une interface
+            à la fois fonctionnelle et esthétique.
+          </p>
+        </div>
+        <div class="projet-images">
+          <img src="/images/screenshots/weatherapp.png" alt="Projet 2" />
+        </div>
+      </div>
+    </div>
+    <div id="projet3" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Exercices Javascript</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            Dans cette section, je présente quelques micro-projets Javascript
+            que j'ai réalisés tout au long de ma formation.
+          </p>
+        </div>
+        <div class="projet-images">
+          <p>
+            1. Application Pokémon API :
+            <br />
+            <br />
+            • Mon premier projet en Javascript, basé sur un exercice bien connu.
+            <br />
+            • Pratique des fonctions de base et manipulation de ma première API.
+            <br />
+            • Acquisition de notions telles que la récupération des éléments du
+            DOM, les écouteurs d'événements, l'utilisation de l'API Fetch, et
+            les premières notions de programmation asynchrone.
+          </p>
+          <img src="/images/screenshots/bonus/pokéAPI.png" alt="Projet 3" />
+          <p>
+            2. To-do List :
+            <br />
+            <br />
+            • Application de gestion de tâches utilisant des fonctions basiques
+            en Javascript. <br />
+            • Manipulation du DOM et gestion du localstorage.
+          </p>
+          <img src="/images/screenshots/todo_list.png" alt="Projet 3" />
+          <p>
+            3. Drum-Kit :
+            <br />
+            <br />
+            • Application permettant de découvrir l'intégration et l'utilisation
+            de fichiers audio sur une page web. <br />
+            • Déclenchement d'événements par clics souris et touches claviers.
+          </p>
+          <img src="/images/screenshots/drum_app.png" alt="Projet 3" />
+          <p>
+            Bonus - Jeux Javascript :
+            <br />
+            <br />
+            Entrainement à la logique du langage Javascript à travers des
+            micro-projets amusants : jeux mathématiques, boucles, etc.
+            <br />
+            <br />
+            Jeu de Dichotomie et jeu du Pierre-Feuille-Ciseaux :
+          </p>
+          <div class="images-bonus">
+            <img
+              class="image-reduite"
+              src="/images/screenshots/bonus/dichotomie.png"
+              alt="Projet 3"
+            />
+            <img
+              class="image-reduite"
+              src="/images/screenshots/bonus/papier_caillou_ciseaux.png"
+              alt="Projet 3"
+            />
+          </div>
+          <p>
+            Et d’autres : chronomètre, inversion des caractères, trouver le mot
+            le plus long, etc
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="projet4" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Création d'une API Rest</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            Ce projet vise à approfondir mes compétences dans l'utilisation de
+            NodeJS en développant une API REST. Au cours de ce projet, j'ai
+            utilisé divers composants pour construire l'API, notamment des
+            middlewares, Express, Nodemon, Sequelize (ORM), Bcrypt et
+            Jsonwebtoken.
+            <br />
+            <br />
+            Outils utilisés pendant le développement : <br />
+            • Insomnia pour les tests d'API <br />
+            • XAMPP et phpMyAdmin pour la gestion de la base de données <br />
+            • Heroku/Heroku CLI/Git pour le déploiement
+            <br />
+            <br />
+            En plus d'acquérir une expérience pratique avec ces outils, j'ai
+            également exploré d'autres concepts tels que : <br />
+            • Gestion des erreurs : résolution des erreurs techniques (mise en
+            place de catch, clarification des messages pour les utilisateurs),
+            gestion des erreurs métier (utilisation de validateurs,
+            contraintes). <br />
+            • Requêtes avancées <br />
+            • Authentification avec les jetons JWT <br />
+            • Déploiement : ajustement des variables d'environnement pour la
+            production, optimisation des dépendances. <br />
+          </p>
+        </div>
+        <div class="projet-images">
+          <img
+            src="/images/screenshots/NodeJS_pokemon/code2.png"
+            alt="Projet 4"
+          />
+          <img
+            src="/images/screenshots/NodeJS_pokemon/insomnia.png"
+            alt="Projet 4"
+          />
+          <img
+            src="/images/screenshots/NodeJS_pokemon/phpmyadmin.png"
+            alt="Projet 4"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="projet5" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Site e-commerce</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            Contexte : Dans le cadre de ma progression en tant que développeur
+            web, j'ai entrepris la création d'un site e-commerce basé sur un
+            modèle défini. Ce projet ambitieux vise à consolider mes
+            connaissances en HTML, CSS, et JavaScript tout en explorant les
+            technologies avancées du développement web.
+            <br />
+            <br />
+            Compétences acquises : <br />
+            • JavaScript Intermédiaire : Maîtrise du DOM, utilisation de
+            jsrender pour la gestion dynamique du contenu, et implémentation
+            d'un système de routage d'URLs. <br />
+            • JavaScript Avancé : Application de concepts asynchrones, adoption
+            des fonctionnalités d'ES6 pour optimiser le code. <br />
+            • NodeJS : Développement d'une Web API robuste, intégration du
+            module Body Parser, gestion du chargement de fichiers, et
+            utilisation de jetons JWT pour la sécurité. <br />
+            • MongoDB : Conception d'une base de données solide, utilisation du
+            framework Mongoose, implémentation de filtres pour une expérience
+            utilisateur améliorée. <br />
+            • Outils de Développement : Utilisation d'ESLint et Babel pour
+            maintenir un code propre et compatible, gestion de versions avec Git
+            et Github, éditeur de code Visual Studio Code. <br />
+            • Déploiement : La phase de déploiement n'est pas encore définie à
+            ce stade, mais sera envisagée au fur et à mesure du développement.
+            <br />
+            Statut : Actuellement en cours de développement.
+          </p>
+        </div>
+        <div class="projet-images">
+          <img
+            src="/images/screenshots/jsamazona/jsamazona_1.png"
+            alt="Projet 5"
+          />
+          <img
+            src="/images/screenshots/jsamazona/jsamazona_2.png"
+            alt="Projet 5"
+          />
+          <img
+            src="/images/screenshots/jsamazona/jsamazona_3.png"
+            alt="Projet 5"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="projet6" class="onglet-projet">
+      <a href="#projets">
+        <button class="retour">Retour</button>
+      </a>
+      <button class="suivant">Projet suivant</button>
+      <div class="contenu-projet">
+        <div class="projet-header">
+          <h2>Les Connexions - site associatif</h2>
+        </div>
+        <div class="projet-description">
+          <p>
+            [En cours] Refonte du Site Web pour une Association de Gestion de
+            Déchets Événementiels :
+            <br />
+            <br />
+            Contexte : cette opportunité marque le début de mon parcours
+            professionnel en tant que développeur web freelance. Le projet
+            consiste à refaire entièrement le site web d'une association locale,
+            spécialisée dans la gestion des déchets dans le domaine de
+            l'événementiel. <br />
+            <br />
+            Objectifs Clés : <br />
+            Gestion de Projet : Engagement dans des discussions avec le client,
+            visioconférences, recherches approfondies, présentations des
+            propositions et aspects administratifs. <br />
+            Prototypage : Utilisation de l'outil Figma pour concevoir et
+            prototyper différentes versions du site, plusieurs revisionnages
+            produits en étroite collaboration avec le client afin d'aboutir au
+            design souhaité. <br />
+            Site Complet : A venir. Développé en HTML, CSS, JS, NodeJS.
+          </p>
+        </div>
+
+        <div class="projet-images">
+          <img
+            class="projet6-image"
+            src="/images/screenshots/les_connexions/les_connexions_1.png"
+            alt="Projet 6"
+          />
+          <img
+            class="projet6-image"
+            src="/images/screenshots/les_connexions/les_connexions_2.png"
+            alt="Projet 6"
+          />
+          <img
+            class="projet6-image"
+            src="/images/screenshots/les_connexions/les_connexions_3.png"
+            alt="Projet 6"
+          />
+        </div>
+      </div>
+    </div>
+    <canvas id="gradient-canvas" data-transition-in />
+
+    <!-- Scripts JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script type="module" src="/js/Gradient.js"></script>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
