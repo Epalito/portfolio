@@ -152,3 +152,57 @@ window.addEventListener('mousemove', (e) => {
     { duration: 300, fill: 'forwards' }
   );
 });
+
+// -------------- Gestion de la section Prestation ----------------
+function closeActiveDetail() {
+  const activeDetail = document.querySelector('.prestation-details.active');
+  if (activeDetail) {
+    activeDetail.classList.remove('active');
+    document
+      .querySelector('.prestation-container')
+      .classList.remove('blur-background');
+  }
+}
+
+document
+  .getElementById('solution-simple')
+  .addEventListener('click', function (event) {
+    event.stopPropagation(); // Empêche la propagation de l'événement de clic
+    closeActiveDetail(); // Ferme la vignette active avant d'ouvrir une nouvelle
+    document.getElementById('details-simple').classList.add('active');
+    document
+      .querySelector('.prestation-container')
+      .classList.add('blur-background');
+  });
+
+document
+  .getElementById('solution-personnalisee')
+  .addEventListener('click', function (event) {
+    event.stopPropagation(); // Empêche la propagation de l'événement de clic
+    closeActiveDetail(); // Ferme la vignette active avant d'ouvrir une nouvelle
+    document.getElementById('details-personnalisee').classList.add('active');
+    document
+      .querySelector('.prestation-container')
+      .classList.add('blur-background');
+  });
+
+document.querySelectorAll('.prestation-details').forEach(function (detail) {
+  detail.addEventListener('click', function (event) {
+    event.stopPropagation(); // Empêche la propagation de l'événement de clic
+    detail.classList.remove('active');
+    document
+      .querySelector('.prestation-container')
+      .classList.remove('blur-background');
+  });
+});
+
+// Fermer la vignette en cliquant en dehors de la vignette
+document.addEventListener('click', function (event) {
+  const activeDetail = document.querySelector('.prestation-details.active');
+  if (activeDetail && !activeDetail.contains(event.target)) {
+    activeDetail.classList.remove('active');
+    document
+      .querySelector('.prestation-container')
+      .classList.remove('blur-background');
+  }
+});
