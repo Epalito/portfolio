@@ -206,3 +206,22 @@ document.addEventListener('click', function (event) {
       .classList.remove('blur-background');
   }
 });
+
+// -------------- Gestion du menu hamburger ----------------
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('.menu a'); // Sélectionner tous les liens du menu
+
+// Ouvrir/fermer le menu
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active'); // Transforme le hamburger en croix
+  menu.classList.toggle('active'); // Affiche ou masque le menu déroulant
+});
+
+// Fermer le menu lorsqu'un lien est cliqué
+menuLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active'); // Masque le menu
+    menuToggle.classList.remove('active'); // Revenir au hamburger
+  });
+});
