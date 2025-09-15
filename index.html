@@ -182,7 +182,7 @@
         <!-- Conteneur des projets Frontend/MERN -->
         <div class="stack-content" data-content="frontend">
           <div class="conteneur-vignettes">
-            <div class="vignette-projet" data-projet="projet2">
+            <div class="vignette-projet" data-projet="projet2" data-modal="true">
               <div class="image-container">
                 <img src="images/screenshots/weatherapp.png" alt="Gestionnaire Backlog Jeux Vidéo" />
               </div>
@@ -195,7 +195,7 @@
               </div>
             </div>
             
-            <div class="vignette-projet" data-projet="projet5">
+            <div class="vignette-projet" data-projet="projet5" data-modal="true">
               <div class="image-container">
                 <img src="images/screenshots/jsamazona/jsamazona_1.png" alt="Site e-commerce" />
               </div>
@@ -208,7 +208,7 @@
               </div>
             </div>
             
-            <div class="vignette-projet" data-projet="projet4">
+            <div class="vignette-projet" data-projet="projet4" data-modal="true">
               <div class="image-container">
                 <img src="images/vignettes/vignette_4_NodeJS_2.png" alt="API REST NodeJS" />
               </div>
@@ -225,7 +225,7 @@
         <!-- Conteneur des projets WordPress -->
         <div class="stack-content" data-content="wordpress">
           <div class="conteneur-vignettes">
-            <div class="vignette-projet" data-projet="projet1">
+            <div class="vignette-projet" data-projet="projet1" data-modal="true">
               <div class="image-container">
                 <img src="images/screenshots/mh.png" alt="Site Vitrine WordPress - Luthière" />
               </div>
@@ -238,7 +238,7 @@
               </div>
             </div>
             
-            <div class="vignette-projet" data-projet="projet6">
+            <div class="vignette-projet" data-projet="projet6" data-modal="true">
               <div class="image-container">
                 <img src="images/vignettes/les_connexions_old_2.png" alt="Les Connexions" />
               </div>
@@ -255,7 +255,7 @@
         <!-- Conteneur des projets Applications Métier -->
         <div class="stack-content" data-content="backend">
           <div class="conteneur-vignettes">
-            <div class="vignette-projet" data-projet="projet3">
+            <div class="vignette-projet" data-projet="projet3" data-modal="true">
               <div class="image-container">
                 <img src="images/vignettes/Symfony_logo.svg.png" alt="Projet Symfony" />
               </div>
@@ -769,7 +769,61 @@
         </div>
       </div>
     </div>
-    <canvas id="gradient-canvas" data-transition-in />
+    <canvas id="gradient-canvas" data-transition-in></canvas>
+
+    <!-- ========================================= -->
+    <!-- STRUCTURE DES MODALES DE PROJETS -->
+    <!-- ========================================= -->
+    <!-- Modal overlay - couche d'arrière-plan -->
+    <div id="modal-overlay" class="modal-overlay">
+      <!-- Conteneur principal de la modale -->
+      <div class="modal-container">
+        <!-- Bouton de fermeture -->
+        <button class="modal-close" aria-label="Fermer la modale">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Navigation entre les projets -->
+        <button class="modal-nav modal-nav-prev" aria-label="Projet précédent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-nav modal-nav-next" aria-label="Projet suivant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <!-- Contenu de la modale -->
+        <div class="modal-content">
+          <!-- Section hero avec titre et badges -->
+          <div class="modal-hero">
+            <div class="modal-hero-content">
+              <h2 class="modal-title"></h2>
+              <div class="modal-badges"></div>
+              <div class="modal-competence-badge"></div>
+            </div>
+          </div>
+
+          <!-- Section description -->
+          <div class="modal-description">
+            <div class="modal-description-content">
+              <p class="modal-text"></p>
+            </div>
+          </div>
+
+          <!-- Section galerie d'images -->
+          <div class="modal-gallery">
+            <div class="modal-gallery-grid">
+              <!-- Les images seront ajoutées dynamiquement par JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Scripts JavaScript -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
