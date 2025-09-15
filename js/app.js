@@ -7,12 +7,6 @@ function setActiveNav() {
   titreNav.addEventListener('click', function () {
     // Réactive le défilement de la page principale
     document.body.style.overflow = 'auto';
-
-    // Masque tous les onglets
-    var onglets = document.querySelectorAll('.onglet-projet');
-    onglets.forEach(function (onglet) {
-      onglet.classList.remove('actif');
-    });
   });
 
   // Ajoute un écouteur d'événements à chaque lien de navigation
@@ -20,12 +14,6 @@ function setActiveNav() {
     navLink.addEventListener('click', () => {
       // Réactive le défilement de la page principale
       document.body.style.overflow = 'auto';
-
-      // Masque tous les onglets
-      var onglets = document.querySelectorAll('.onglet-projet');
-      onglets.forEach(function (onglet) {
-        onglet.classList.remove('actif');
-      });
     });
   });
 
@@ -74,37 +62,6 @@ document.querySelectorAll('section').forEach((section) => {
 });
 
 document.addEventListener('scroll', setActiveNav);
-
-// -------------- Ancien système d'onglets supprimé ----------------
-// L'ancien système d'onglets a été remplacé par les modales modernes
-
-// Ajoute un écouteur d'événements au bouton de retour (gardé pour compatibilité)
-var boutonsRetour = document.querySelectorAll('.retour');
-boutonsRetour.forEach(function (bouton) {
-  bouton.addEventListener('click', function (event) {
-    // Arrête la propagation de l'événement
-    event.stopPropagation();
-
-    // Masque tous les onglets
-    var onglets = document.querySelectorAll('.onglet-projet');
-    onglets.forEach(function (onglet) {
-      onglet.classList.remove('actif');
-    });
-
-    // Réactive le défilement de la page principale
-    document.body.style.overflow = 'auto';
-  });
-});
-
-document.querySelectorAll('.suivant').forEach((button, index, buttons) => {
-  button.addEventListener('click', () => {
-    const currentProject = button.parentElement;
-    currentProject.classList.remove('actif');
-
-    const nextProject = buttons[(index + 1) % buttons.length].parentElement;
-    nextProject.classList.add('actif');
-  });
-});
 
 // -------------- Gestion du gradient dynamique ----------------
 
