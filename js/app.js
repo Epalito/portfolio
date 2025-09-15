@@ -569,12 +569,6 @@ class ProjectModal {
     // Empêcher le scroll du body
     document.body.style.overflow = 'hidden';
     
-    // Masquer le curseur personnalisé dans la modale
-    const cursorDot = document.querySelector('[data-cursor-dot]');
-    const cursorOutline = document.querySelector('[data-cursor-outline]');
-    if (cursorDot) cursorDot.style.display = 'none';
-    if (cursorOutline) cursorOutline.style.display = 'none';
-    
     // Afficher la modale avec animation
     this.modal.classList.add('active');
     
@@ -589,12 +583,6 @@ class ProjectModal {
     
     // Restaurer le scroll du body
     document.body.style.overflow = 'auto';
-    
-    // Réafficher le curseur personnalisé
-    const cursorDot = document.querySelector('[data-cursor-dot]');
-    const cursorOutline = document.querySelector('[data-cursor-outline]');
-    if (cursorDot) cursorDot.style.display = '';
-    if (cursorOutline) cursorOutline.style.display = '';
     
     // Masquer la modale avec animation
     this.modal.classList.remove('active');
