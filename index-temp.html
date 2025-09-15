@@ -47,6 +47,7 @@
         <ul>
           <li><a class="nav-link" href="#accueil">/Home</a></li>
           <li><a class="nav-link" href="#biographie">/Biographie</a></li>
+          <li><a class="nav-link" href="#prestation">/Prestations</a></li>
           <li><a class="nav-link" href="#projets">/Projets</a></li>
           <li><a class="nav-link" href="#contact">/Contact</a></li>
         </ul>
@@ -62,8 +63,9 @@
       <div class="menu">
         <a href="#accueil" style="--order: 1">Accueil</a>
         <a href="#biographie" style="--order: 2">Biographie</a>
-        <a href="#projets" style="--order: 3">Projets</a>
-        <a href="#contact" style="--order: 4">Contact</a>
+        <a href="#prestation" style="--order: 3">Prestations</a>
+        <a href="#projets" style="--order: 4">Projets</a>
+        <a href="#contact" style="--order: 5">Contact</a>
       </div>
     </div>
     <div id="contenu">
@@ -85,7 +87,7 @@
         <!-- Contenu de la section -->
         <p>
           Passionné par deux domaines distincts - la nature et l'informatique -
-          j'ai entamé mon parcours professionnel dans les sciences de la terre
+          j’ai entamé mon parcours professionnel dans les sciences de la terre
           et de l'environnement. Titulaire d'un master 2 avec mention, j'ai
           consacré quelques années à étudier les phénomènes géologiques avant de
           donner une nouvelle orientation à ma carrière en me plongeant dans le
@@ -124,8 +126,120 @@
       </section>
 -->
 
-      <!-- Section Prestations supprimée - voir prestations-backup.html pour réactivation -->
-
+      <!-- Section Prestation -->
+      <section id="prestation" class="scroll-blur">
+        <h2>Prestations</h2>
+        <div class="prestation-container">
+          <div class="prestation-card-wrapper">
+            <div class="prestation-card" id="solution-simple">
+              <i class="fas fa-cogs prestation-icon"></i>
+              <h3 class="prestation-title">Solution Simple</h3>
+              <p class="prestation-text">
+                Une solution rapide et efficace pour vos besoins de base en
+                développement web.
+              </p>
+            </div>
+          </div>
+          <div class="prestation-card-wrapper">
+            <div class="prestation-card" id="solution-personnalisee">
+              <i class="fas fa-tools prestation-icon"></i>
+              <h3 class="prestation-title">Solution Personnalisée</h3>
+              <p class="prestation-text">
+                Une solution sur mesure adaptée à vos exigences spécifiques et à
+                vos projets complexes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="prestation-details" id="details-simple">
+          <h3><i class="fas fa-user"></i> Pour qui ?</h3>
+          <ul>
+            <li>
+              Petites entreprises, entrepreneurs ou indépendants avec un budget
+              limité.
+            </li>
+            <li>
+              Idéal pour les sites vitrines, blogs ou pages de présentation avec
+              peu de mise à jour ou de personnalisation complexe.
+            </li>
+          </ul>
+          <h3><i class="fas fa-cogs"></i> Ce que je propose</h3>
+          <ul>
+            <li>
+              Création de sites rapides, élégants et professionnels grâce à
+              WordPress.
+            </li>
+            <li>
+              Mise en place d’un thème adapté à votre activité et
+              personnalisable.
+            </li>
+            <li>
+              Intégration des fonctionnalités essentielles (formulaires,
+              galeries, pages de contact, etc.).
+            </li>
+            <li>
+              Optimisation de la performance et du SEO pour une visibilité
+              accrue.
+            </li>
+            <li>
+              Formation de base pour gérer votre site en autonomie après
+              livraison.
+            </li>
+          </ul>
+          <h3><i class="fas fa-check-circle"></i> Avantages</h3>
+          <ul>
+            <li>Solution rapide et économique.</li>
+            <li>Idéal pour un lancement rapide de votre activité en ligne.</li>
+          </ul>
+        </div>
+        <div class="prestation-details" id="details-personnalisee">
+          <h3><i class="fas fa-user"></i> Pour qui ?</h3>
+          <ul>
+            <li>
+              Startups, PME ou projets nécessitant des fonctionnalités complexes
+              et un haut niveau de personnalisation.
+            </li>
+            <li>
+              Idéal pour les plateformes web interactives, applications web ou
+              sites nécessitant une intégration avancée avec des API ou des
+              bases de données.
+            </li>
+          </ul>
+          <h3><i class="fas fa-cogs"></i> Ce que je propose</h3>
+          <ul>
+            <li>
+              Développement sur mesure avec la stack MERN (MongoDB, Express,
+              React, Node.js).
+            </li>
+            <li>
+              Création d’un design entièrement personnalisé en fonction de vos
+              besoins.
+            </li>
+            <li>
+              Développement de fonctionnalités spécifiques (espace membre,
+              e-commerce, tableau de bord interactif, etc.).
+            </li>
+            <li>
+              Gestion avancée des données grâce à une base MongoDB sécurisée et
+              performante.
+            </li>
+            <li>
+              Accompagnement sur le long terme : maintenance, évolutions et
+              mises à jour.
+            </li>
+          </ul>
+          <h3><i class="fas fa-check-circle"></i> Avantages</h3>
+          <ul>
+            <li>
+              Un site ou une application unique, parfaitement adapté à vos
+              besoins.
+            </li>
+            <li>
+              Idéal pour des projets nécessitant des performances élevées et une
+              évolutivité.
+            </li>
+          </ul>
+        </div>
       <!-- Section Projets -->
       <section id="projets" name="projets" class="scroll-blur">
         <h2>Mes Projets</h2>
@@ -134,12 +248,12 @@
         <div class="stack-navigation">
           <div class="stack-folder" data-stack="frontend">
             <div class="competence-badge expertise">
-              <span>avancé</span>
+              <span>expertise</span>
             </div>
             <div class="folder-icon">
               <i class="fas fa-folder"></i>
             </div>
-            <span class="folder-label">Stack MERN</span>
+            <span class="folder-label">React & Node.js</span>
             <div class="tech-badges">
               <span class="badge badge-react">React</span>
               <span class="badge badge-node">Node.js</span>
@@ -165,12 +279,12 @@
           
           <div class="stack-folder" data-stack="backend">
             <div class="competence-badge apprentissage">
-              <span>apprentissage</span>
+              <span>en cours</span>
             </div>
             <div class="folder-icon">
               <i class="fas fa-folder"></i>
             </div>
-            <span class="folder-label">Applications Métier</span>
+            <span class="folder-label">Backend & Symfony</span>
             <div class="tech-badges">
               <span class="badge badge-symfony">Symfony</span>
               <span class="badge badge-php">PHP</span>

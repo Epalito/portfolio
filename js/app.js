@@ -29,14 +29,19 @@ function setActiveNav() {
     });
   });
 
-  sections.forEach((section, index) => {
+  sections.forEach((section) => {
     const sectionTop = section.offsetTop - 50;
     const sectionBottom = sectionTop + section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    const correspondingNavLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
     if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-      navLinks[index].classList.add('active');
-    } else {
-      navLinks[index].classList.remove('active');
+      // Retirer active de tous les liens
+      navLinks.forEach(link => link.classList.remove('active'));
+      // Ajouter active au lien correspondant
+      if (correspondingNavLink) {
+        correspondingNavLink.classList.add('active');
+      }
     }
   });
 }
@@ -48,12 +53,16 @@ const observer = new IntersectionObserver(
         const navLink = document.querySelector(
           `.nav-link[href="#${entry.target.id}"]` // Modifiez cette ligne
         );
-        navLink.classList.add('active');
+        if (navLink) {
+          navLink.classList.add('active');
+        }
       } else {
         const navLink = document.querySelector(
           `.nav-link[href="#${entry.target.id}"]` // Modifiez cette ligne
         );
-        navLink.classList.remove('active');
+        if (navLink) {
+          navLink.classList.remove('active');
+        }
       }
     });
   },
@@ -138,74 +147,30 @@ gradient.initGradient('#gradient-canvas');
 const cursorDot = document.querySelector('[data-cursor-dot]');
 const cursorOutline = document.querySelector('[data-cursor-outline]');
 
-window.addEventListener('mousemove', (e) => {
-  const posX = e.clientX;
-  const posY = e.clientY;
+// Vérifier que les éléments existent avant d'ajouter les event listeners
+if (cursorDot && cursorOutline) {
+  window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-  cursorDot.style.left = `${posX}px`;
-  cursorDot.style.top = `${posY}px`;
-  cursorOutline.animate(
-    {
-      left: `${posX}px`,
-      top: `${posY}px`,
-    },
-    { duration: 300, fill: 'forwards' }
-  );
-});
-
-// -------------- Gestion de la section Prestation ----------------
-function closeActiveDetail() {
-  const activeDetail = document.querySelector('.prestation-details.active');
-  if (activeDetail) {
-    activeDetail.classList.remove('active');
-    document
-      .querySelector('.prestation-container')
-      .classList.remove('blur-background');
-  }
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+    cursorOutline.animate(
+      {
+        left: `${posX}px`,
+        top: `${posY}px`,
+      },
+      { duration: 300, fill: 'forwards' }
+    );
+  });
 }
 
-document
-  .getElementById('solution-simple')
-  .addEventListener('click', function (event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement de clic
-    closeActiveDetail(); // Ferme la vignette active avant d'ouvrir une nouvelle
-    document.getElementById('details-simple').classList.add('active');
-    document
-      .querySelector('.prestation-container')
-      .classList.add('blur-background');
-  });
-
-document
-  .getElementById('solution-personnalisee')
-  .addEventListener('click', function (event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement de clic
-    closeActiveDetail(); // Ferme la vignette active avant d'ouvrir une nouvelle
-    document.getElementById('details-personnalisee').classList.add('active');
-    document
-      .querySelector('.prestation-container')
-      .classList.add('blur-background');
-  });
-
-document.querySelectorAll('.prestation-details').forEach(function (detail) {
-  detail.addEventListener('click', function (event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement de clic
-    detail.classList.remove('active');
-    document
-      .querySelector('.prestation-container')
-      .classList.remove('blur-background');
-  });
-});
-
-// Fermer la vignette en cliquant en dehors de la vignette
-document.addEventListener('click', function (event) {
-  const activeDetail = document.querySelector('.prestation-details.active');
-  if (activeDetail && !activeDetail.contains(event.target)) {
-    activeDetail.classList.remove('active');
-    document
-      .querySelector('.prestation-container')
-      .classList.remove('blur-background');
-  }
-});
+/*
+===============================================
+CODE PRESTATIONS SUPPRIMÉ - 15 septembre 2025 
+Cause d'erreur: elements prestations n'existent plus
+===============================================
+*/
 
 // -------------- Gestion du menu hamburger ----------------
 const menuToggle = document.querySelector('.menu-toggle');
@@ -223,5 +188,106 @@ menuLinks.forEach((link) => {
   link.addEventListener('click', () => {
     menu.classList.remove('active'); // Masque le menu
     menuToggle.classList.remove('active'); // Revenir au hamburger
+  });
+});
+
+// -------------- Code de débogage supprimé ----------------
+
+// ========================================
+// GESTION DU SYSTÈME DE NAVIGATION PAR STACKS
+// ========================================
+
+// Gestion des dossiers/stacks technologiques
+document.addEventListener('DOMContentLoaded', function() {
+  const stackFolders = document.querySelectorAll('.stack-folder');
+  const stackContents = document.querySelectorAll('.stack-content');
+  
+  stackFolders.forEach(folder => {
+    folder.addEventListener('click', function() {
+      const stackType = this.getAttribute('data-stack');
+      const targetContent = document.querySelector(`[data-content="${stackType}"]`);
+      
+      // Vérifier si ce dossier est déjà actif
+      const isCurrentlyActive = this.classList.contains('active');
+      
+      if (isCurrentlyActive) {
+        // Si le dossier est déjà ouvert, le fermer avec animation
+        this.classList.remove('active');
+        if (targetContent) {
+          // Délai pour permettre l'animation de fermeture
+          setTimeout(() => {
+            targetContent.classList.remove('active');
+          }, 150);
+        }
+      } else {
+        // Sinon, fermer tous les autres dossiers et ouvrir celui-ci
+        
+        // Retirer la classe active de tous les dossiers
+        stackFolders.forEach(f => f.classList.remove('active'));
+        
+        // Masquer tous les contenus avec animation
+        stackContents.forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // Ajouter la classe active au dossier cliqué
+        this.classList.add('active');
+        
+        // Afficher le contenu correspondant avec un délai pour l'animation
+        if (targetContent) {
+          setTimeout(() => {
+            targetContent.classList.add('active');
+          }, 200); // Légèrement plus long pour laisser le temps à l'ancien de se fermer
+        }
+      }
+    });
+  });
+  
+  // Amélioration de l'effet hover sur les badges
+  const badges = document.querySelectorAll('.badge');
+  badges.forEach(badge => {
+    badge.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-2px) scale(1.05)';
+    });
+    
+    badge.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+});
+
+// Animation d'apparition des badges sur les vignettes
+const observerOptions = {
+  threshold: 0.3,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const badgeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const badges = entry.target.querySelectorAll('.badge');
+      badges.forEach((badge, index) => {
+        setTimeout(() => {
+          badge.style.opacity = '1';
+          badge.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+  });
+}, observerOptions);
+
+// Observer toutes les vignettes de projets
+document.addEventListener('DOMContentLoaded', function() {
+  const projectCards = document.querySelectorAll('.vignette-projet');
+  projectCards.forEach(card => {
+    badgeObserver.observe(card);
+    
+    // Initialiser les badges en position cachée
+    const badges = card.querySelectorAll('.badge');
+    badges.forEach(badge => {
+      badge.style.opacity = '0';
+      badge.style.transform = 'translateY(20px)';
+      badge.style.transition = 'all 0.4s ease';
+    });
   });
 });

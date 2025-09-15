@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations - Sauvegarde</title>
+    <style>
+        /* CSS spécifique aux prestations - sauvegardé depuis styles.css */
+        
+        /* Styles pour la section Prestation */
+        .prestation-container {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px 0;
+        }
+
+        .prestation-card {
+          width: 45%; /* Augmenter la largeur des vignettes */
+          padding: 20px;
+          background-color: #77756d7e;
+          border-radius: 8px;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+          margin: 0 5vw; /* Ajouter de l'espacement entre les vignettes */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 400px; /* Ajouter une hauteur minimale pour allonger les cartes */
+        }
+
+        .prestation-icon {
+          font-size: 2em;
+          margin-bottom: 15px;
+          color: var(--titre-color);
+        }
+
+        .prestation-title {
+          font-size: 1.5em;
+          font-weight: bold;
+          margin: 20px 0 2vw; /* Réduire l'espacement entre le titre et le texte */
+          color: var(--titre-color);
+        }
+
+        .prestation-text {
+          font-size: 1.2em;
+          line-height: 1.6; /* Augmenter l'espacement entre les lignes de texte */
+          color: #333;
+          margin: 0 20px; /* Ajouter des marges pour équilibrer l'espace autour du texte */
+        }
+
+        .prestation-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styles pour les vignettes détaillées */
+        #prestation .prestation-details {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto; /* Ajuster la largeur automatiquement */
+          max-width: 80%; /* Limiter la largeur maximale */
+          padding: 40px;
+          background-color: #dbce95dc;
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          text-align: left; /* Aligner le texte à gauche */
+          overflow-y: auto; /* Ajouter un défilement vertical si nécessaire */
+          max-height: 80vh; /* Limiter la hauteur maximale */
+          transition: transform 0.3s ease, opacity 0.3s ease;
+          opacity: 0;
+          color: #333333; /* Couleur du texte noir */
+        }
+
+        #prestation .prestation-details h3 {
+          margin-bottom: 20px;
+          font-family: 'Poppins', sans-serif;
+          color: rgb(37, 100, 182);
+          display: flex;
+          align-items: center;
+        }
+
+        #prestation .prestation-details h3 i {
+          margin-right: 10px; /* Espace entre l'icône et le titre */
+          color: #333333; /* Couleur du texte noir */
+        }
+
+        #prestation .prestation-details ul {
+          list-style-type: disc;
+          padding-left: 30px;
+          margin-bottom: 30px;
+        }
+
+        #prestation .prestation-details ul li {
+          margin-bottom: 10px; /* Augmenter l'espacement entre les lignes de descriptions */
+          color: #333333; /* Couleur du texte noir */
+        }
+
+        #prestation .prestation-details p {
+          margin-bottom: 10px; /* Ajouter un espace en dessous des paragraphes */
+        }
+
+        /* Supprimer la marge inférieure du dernier élément */
+        #prestation .prestation-details > *:last-child {
+          margin-bottom: 0;
+        }
+
+        #prestation .prestation-details.active {
+          display: block;
+          opacity: 1;
+          animation: fadeIn 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    =====================================================
+    SAUVEGARDE SECTION PRESTATIONS 
+    Date: 15 septembre 2025
+    Objectif: Garder le code complet pour réactivation future
+    =====================================================
+    -->
+    
+    <!-- Section Prestation -->
+    <section id="prestation" class="scroll-blur">
+        <h2>Prestations</h2>
+        <div class="prestation-container">
+          <div class="prestation-card-wrapper">
+            <div class="prestation-card" id="solution-simple">
+              <i class="fas fa-cogs prestation-icon"></i>
+              <h3 class="prestation-title">Solution Simple</h3>
+              <p class="prestation-text">
+                Une solution rapide et efficace pour vos besoins de base en
+                développement web.
+              </p>
+            </div>
+          </div>
+          <div class="prestation-card-wrapper">
+            <div class="prestation-card" id="solution-personnalisee">
+              <i class="fas fa-tools prestation-icon"></i>
+              <h3 class="prestation-title">Solution Personnalisée</h3>
+              <p class="prestation-text">
+                Une solution sur mesure adaptée à vos exigences spécifiques et à
+                vos projets complexes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="prestation-details" id="details-simple">
+          <h3><i class="fas fa-user"></i> Pour qui ?</h3>
+          <ul>
+            <li>
+              Petites entreprises, entrepreneurs ou indépendants avec un budget
+              limité.
+            </li>
+            <li>
+              Idéal pour les sites vitrines, blogs ou pages de présentation avec
+              peu de mise à jour ou de personnalisation complexe.
+            </li>
+          </ul>
+          <h3><i class="fas fa-cogs"></i> Ce que je propose</h3>
+          <ul>
+            <li>
+              Création de sites rapides, élégants et professionnels grâce à
+              WordPress.
+            </li>
+            <li>
+              Mise en place d'un thème adapté à votre activité et
+              personnalisable.
+            </li>
+            <li>
+              Intégration des fonctionnalités essentielles (formulaires,
+              galeries, pages de contact, etc.).
+            </li>
+            <li>
+              Optimisation de la performance et du SEO pour une visibilité
+              accrue.
+            </li>
+            <li>
+              Formation de base pour gérer votre site en autonomie après
+              livraison.
+            </li>
+          </ul>
+          <h3><i class="fas fa-check-circle"></i> Avantages</h3>
+          <ul>
+            <li>Solution rapide et économique.</li>
+            <li>Idéal pour un lancement rapide de votre activité en ligne.</li>
+          </ul>
+        </div>
+        <div class="prestation-details" id="details-personnalisee">
+          <h3><i class="fas fa-user"></i> Pour qui ?</h3>
+          <ul>
+            <li>
+              Startups, PME ou projets nécessitant des fonctionnalités complexes
+              et un haut niveau de personnalisation.
+            </li>
+            <li>
+              Idéal pour les plateformes web interactives, applications web ou
+              sites nécessitant une intégration avancée avec des API ou des
+              bases de données.
+            </li>
+          </ul>
+          <h3><i class="fas fa-cogs"></i> Ce que je propose</h3>
+          <ul>
+            <li>
+              Développement sur mesure avec la stack MERN (MongoDB, Express,
+              React, Node.js).
+            </li>
+            <li>
+              Création d'un design entièrement personnalisé en fonction de vos
+              besoins.
+            </li>
+            <li>
+              Développement de fonctionnalités spécifiques (espace membre,
+              e-commerce, tableau de bord interactif, etc.).
+            </li>
+            <li>
+              Gestion avancée des données grâce à une base MongoDB sécurisée et
+              performante.
+            </li>
+            <li>
+              Accompagnement sur le long terme : maintenance, évolutions et
+              mises à jour.
+            </li>
+          </ul>
+          <h3><i class="fas fa-check-circle"></i> Avantages</h3>
+          <ul>
+            <li>
+              Un site ou une application unique, parfaitement adapté à vos
+              besoins.
+            </li>
+            <li>
+              Idéal pour des projets nécessitant des performances élevées et une
+              évolutivité.
+            </li>
+          </ul>
+        </div>
+    </section>
+
+    <!-- 
+    =====================================================
+    INSTRUCTIONS POUR RÉACTIVATION :
+    
+    1. Copier la section HTML dans index.html
+    2. Copier le CSS dans styles.css
+    3. Ajouter le lien navigation dans le menu
+    4. Vérifier que le JavaScript associé fonctionne
+    =====================================================
+    -->
+</body>
+</html>

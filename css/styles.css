@@ -210,14 +210,49 @@ section {
   object-fit: cover;
   object-position: center top;
   margin-bottom: 6vh;
-  border: 10px solid #afafafb7;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-  filter: saturate(1.5);
+  
+  /* Effet glass moderne coordonné avec les dossiers */
+  background: rgba(255, 255, 255, 0.05);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  transition: all 0.4s ease;
+  filter: saturate(1.2) contrast(1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de brillance subtil */
+.image-profil::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.image-profil:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(20px, 20px);
 }
 
 .image-profil:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 0 40px rgba(0, 0, 0, 0.4),
+    0 12px 35px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  filter: saturate(1.3) contrast(1.15) brightness(1.05);
 }
 
 /* Mise en page de la section Compétences 
@@ -271,7 +306,14 @@ section {
   transform: rotate(0deg) scale(1.1);
 }*/
 
-/* Styles pour la section Prestation */
+/*
+===============================================
+CSS PRESTATIONS - COMMENTÉ (voir prestations-backup.html)
+Date: 15 septembre 2025
+Objectif: Garder le CSS pour réactivation future
+===============================================
+
+Styles pour la section Prestation 
 .prestation-container {
   display: flex;
   justify-content: space-around;
@@ -279,19 +321,19 @@ section {
 }
 
 .prestation-card {
-  width: 45%; /* Augmenter la largeur des vignettes */
+  width: 45%; Augmenter la largeur des vignettes 
   padding: 20px;
   background-color: #77756d7e;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  margin: 0 5vw; /* Ajouter de l'espacement entre les vignettes */
+  margin: 0 5vw; Ajouter de l'espacement entre les vignettes 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 400px; /* Ajouter une hauteur minimale pour allonger les cartes */
+  min-height: 400px; Ajouter une hauteur minimale pour allonger les cartes 
 }
 
 .prestation-icon {
@@ -303,15 +345,15 @@ section {
 .prestation-title {
   font-size: 1.5em;
   font-weight: bold;
-  margin: 20px 0 2vw; /* Réduire l'espacement entre le titre et le texte */
+  margin: 20px 0 2vw; Réduire l'espacement entre le titre et le texte 
   color: var(--titre-color);
 }
 
 .prestation-text {
   font-size: 1.2em;
-  line-height: 1.6; /* Augmenter l'espacement entre les lignes de texte */
+  line-height: 1.6; Augmenter l'espacement entre les lignes de texte 
   color: #333;
-  margin: 0 20px; /* Ajouter des marges pour équilibrer l'espace autour du texte */
+  margin: 0 20px; Ajouter des marges pour équilibrer l'espace autour du texte 
 }
 
 .prestation-card:hover {
@@ -319,26 +361,26 @@ section {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles pour les vignettes détaillées */
+Styles pour les vignettes détaillées 
 #prestation .prestation-details {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: auto; /* Ajuster la largeur automatiquement */
-  max-width: 80%; /* Limiter la largeur maximale */
+  width: auto; Ajuster la largeur automatiquement 
+  max-width: 80%; Limiter la largeur maximale 
   padding: 40px;
   background-color: #dbce95dc;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  text-align: left; /* Aligner le texte à gauche */
-  overflow-y: auto; /* Ajouter un défilement vertical si nécessaire */
-  max-height: 80vh; /* Limiter la hauteur maximale */
+  text-align: left; Aligner le texte à gauche 
+  overflow-y: auto; Ajouter un défilement vertical si nécessaire 
+  max-height: 80vh; Limiter la hauteur maximale 
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
-  color: #333333; /* Couleur du texte noir */
+  color: #333333; Couleur du texte noir 
 }
 
 #prestation .prestation-details h3 {
@@ -350,8 +392,8 @@ section {
 }
 
 #prestation .prestation-details h3 i {
-  margin-right: 10px; /* Espace entre l'icône et le titre */
-  color: #333333; /* Couleur du texte noir */
+  margin-right: 10px; Espace entre l'icône et le titre 
+  color: #333333; Couleur du texte noir 
 }
 
 #prestation .prestation-details ul {
@@ -361,15 +403,15 @@ section {
 }
 
 #prestation .prestation-details ul li {
-  margin-bottom: 10px; /* Augmenter l'espacement entre les lignes de descriptions */
-  color: #333333; /* Couleur du texte noir */
+  margin-bottom: 10px; Augmenter l'espacement entre les lignes de descriptions 
+  color: #333333; Couleur du texte noir 
 }
 
 #prestation .prestation-details p {
-  margin-bottom: 10px; /* Ajouter un espace en dessous des paragraphes */
+  margin-bottom: 10px; Ajouter un espace en dessous des paragraphes 
 }
 
-/* Supprimer la marge inférieure du dernier élément */
+Supprimer la marge inférieure du dernier élément 
 #prestation .prestation-details > *:last-child {
   margin-bottom: 0;
 }
@@ -379,6 +421,11 @@ section {
   opacity: 1;
   animation: fadeIn 0.3s ease;
 }
+
+===============================================
+FIN CSS PRESTATIONS COMMENTÉ
+===============================================
+*/
 
 @keyframes fadeIn {
   from {
@@ -1204,5 +1251,402 @@ img {
   .menu {
     /* Menu déroulant */
     display: none; /* Masquer ces éléments */
+  }
+}
+
+/* ========================================= */
+/* STYLES POUR LE SYSTÈME DE NAVIGATION PAR STACKS */
+/* ========================================= */
+
+.stack-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0 60px 0;
+  flex-wrap: wrap;
+}
+
+.stack-folder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+  min-width: 240px;
+  max-width: 280px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* ========================================= */
+/* SYSTÈME DE TAMPONS DE COMPÉTENCE */
+/* ========================================= */
+
+.competence-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 8px 4px 16px;
+  font-size: 6px;
+  font-weight: 400;
+  font-family: 'Courier New', 'American Typewriter', 'Andale Mono', 'Lucida Console', monospace !important;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  
+  /* Création du bandeau triangulaire */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+  transform-origin: top right;
+}
+
+/* Style pour le texte à l'intérieur du badge */
+.competence-badge span {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  letter-spacing: 0.3px !important;
+  color: inherit !important;
+}
+
+/* Badge Expertise - Bandeau beige/sable professionnel */
+.competence-badge.expertise {
+  background: linear-gradient(135deg, #d4a574, #c49464);
+  color: #5d4e37;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(212, 165, 116, 0.4);
+  border-bottom: 1px solid rgba(93, 78, 55, 0.2);
+}
+
+.competence-badge.expertise:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #c49464, #b8845a);
+  transform: scale(1.02);
+}
+
+/* Badge Maîtrise - Bandeau vert d'eau professionnel */
+.competence-badge.maitrise {
+  background: linear-gradient(135deg, #a8d5ba, #94c9a9);
+  color: #2d5a3d;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(168, 213, 186, 0.4);
+  border-bottom: 1px solid rgba(45, 90, 61, 0.2);
+}
+
+.competence-badge.maitrise:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #94c9a9, #7fb896);
+  transform: scale(1.02);
+}
+
+/* Badge Apprentissage - Bandeau bleu poudré professionnel */
+.competence-badge.apprentissage {
+  background: linear-gradient(135deg, #a8c8ec, #94b8e0);
+  color: #2c4a6b;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(168, 200, 236, 0.4);
+  border-bottom: 1px solid rgba(44, 74, 107, 0.2);
+}
+
+.competence-badge.apprentissage:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #94b8e0, #7fa7d3);
+  transform: scale(1.02);
+}
+
+/* Animation de pulsation très subtile pour les bandeaux pastels */
+@keyframes bandeauPastelPulse {
+  0%, 100% {
+    opacity: 0.9;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.4);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 3px 12px rgba(212, 165, 116, 0.5);
+  }
+}
+
+.competence-badge.expertise {
+  animation: bandeauPastelPulse 10s infinite;
+}
+
+.stack-folder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.stack-folder:hover::before {
+  left: 100%;
+}
+
+.stack-folder:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stack-folder.active {
+  border-color: var(--titre-color);
+  background: rgba(219, 206, 149, 0.1);
+  box-shadow: 0 5px 20px rgba(219, 206, 149, 0.2);
+}
+
+.folder-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: var(--titre-color);
+}
+
+.folder-label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* ========================================= */
+/* STYLES POUR LES BADGES TECHNOLOGIQUES */
+/* ========================================= */
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+  transition: all 0.3s ease;
+}
+
+/* ========================================= */
+/* STYLES POUR LES BADGES TECHNOLOGIQUES */
+/* ========================================= */
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+  transition: all 0.3s ease;
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.projet-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+/* Badges spécifiques par technologie */
+.badge-react {
+  background: rgba(97, 218, 251, 0.1);
+  color: #61dafb;
+  border-color: #61dafb;
+}
+
+.badge-node {
+  background: rgba(104, 160, 99, 0.1);
+  color: #68a063;
+  border-color: #68a063;
+}
+
+.badge-mongo {
+  background: rgba(74, 145, 61, 0.1);
+  color: #4a913d;
+  border-color: #4a913d;
+}
+
+.badge-express {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.badge-wordpress {
+  background: rgba(0, 115, 170, 0.1);
+  color: #0073aa;
+  border-color: #0073aa;
+}
+
+.badge-php {
+  background: rgba(119, 123, 180, 0.1);
+  color: #777bb4;
+  border-color: #777bb4;
+}
+
+.badge-mysql {
+  background: rgba(0, 117, 143, 0.1);
+  color: #00758f;
+  border-color: #00758f;
+}
+
+.badge-symfony {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.badge-postgresql {
+  background: rgba(51, 103, 145, 0.1);
+  color: #336791;
+  border-color: #336791;
+}
+
+.badge-css {
+  background: rgba(21, 114, 182, 0.1);
+  color: #1572b6;
+  border-color: #1572b6;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================= */
+/* STYLES POUR LE CONTENU DES STACKS */
+/* ========================================= */
+
+.stack-content {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.stack-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  max-height: 2000px; /* Valeur assez grande pour contenir le contenu */
+}
+
+/* Animation d'entrée (garde l'ancienne pour compatibilité) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Amélioration des vignettes de projets */
+.vignette-projet {
+  position: relative;
+  overflow: hidden;
+}
+
+.vignette-projet .projet-badges {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px 15px 15px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.vignette-projet:hover .projet-badges {
+  transform: translateY(0);
+}
+
+/* Responsive pour le système de stacks */
+@media (max-width: 1024px) {
+  .stack-navigation {
+    gap: 20px;
+  }
+  
+  .stack-folder {
+    min-width: 220px;
+    max-width: 250px;
+  }
+  
+  .folder-label {
+    font-size: 16px;
+  }
+  
+  .competence-badge {
+    font-size: 5px;
+    padding: 3px 6px 3px 12px;
+    opacity: 0.85;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .stack-folder {
+    min-width: 280px;
+    max-width: 320px;
+    padding: 20px;
+  }
+  
+  .folder-icon {
+    font-size: 36px;
+  }
+  
+  .folder-label {
+    font-size: 18px;
+  }
+  
+  .tech-badges .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  
+  .competence-badge {
+    font-size: 4px;
+    padding: 2px 5px 2px 10px;
+    opacity: 0.8;
+    letter-spacing: 0.1px;
   }
 }
