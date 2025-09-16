@@ -20,7 +20,6 @@ html {
   --titre-color: #dbce95;
 }
 
-/* Mise en place du curseur */
 .cursor-dot {
   width: 5px;
   height: 5px;
@@ -44,7 +43,6 @@ html {
   pointer-events: none;
 }
 
-/* Mise en page du dégradé de fond */
 #gradient-canvas {
   width: 100%;
   height: 100%;
@@ -54,8 +52,7 @@ html {
   --gradient-color-4: #0e3147;
 }
 
-/* Mise en page de la barre de navigation */
-
+/* Navigation */
 nav a.active {
   color: var(--titre-color);
 }
@@ -72,15 +69,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: rgba(
-    0,
-    0,
-    0,
-    0
-  ); /* Ajoute un fond semi-transparent à la barre de navigation */
-  backdrop-filter: blur(
-    5px
-  ); /* Ajoute un effet de flou au contenu derrière la barre de navigation */
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
 }
 
 nav ul {
@@ -113,8 +103,7 @@ section.active {
   border: 2px solid #ff5733;
 }
 
-/* Mise en page des titres */
-
+/* Titres */
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 105px;
@@ -122,27 +111,19 @@ h1 {
   line-height: 126px;
   font-style: normal;
   margin-bottom: 5vh;
-  
-  /* Fallback pour navigateurs non compatibles */
   color: var(--titre-color);
-  
-  /* Effet diagonal bicolore moderne */
   background: linear-gradient(
     120deg,
     var(--titre-color) 0%,
-    var(--titre-color) 65%,
-    #ffffff 65%,
+    var(--titre-color) 67%,
+    #ffffff 67%,
     #ffffff 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  /* Ombres multiples pour effet moderne et profondeur */
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25))
           drop-shadow(-1px -1px 3px rgba(255, 255, 255, 0.1));
-  
-  /* Animation subtile */
   transition: filter 0.4s ease, transform 0.3s ease;
   position: relative;
 }
@@ -219,8 +200,7 @@ h2 {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
-/* Mise en page des sections */
-
+/* Sections */
 section {
   display: flex;
   flex-direction: column;
@@ -231,11 +211,9 @@ section {
   margin: 0 auto;
   height: 100vh;
   position: relative;
-  margin-top: 50px; /* Ajouter un espace au-dessus de chaque section */
-  margin-bottom: 50px; /* Ajouter un espace en dessous de chaque section */
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
-/* Mise en page de la section Introduction */
 
 #introduction p {
   line-height: 2;
@@ -248,8 +226,6 @@ section {
   object-fit: cover;
   object-position: center top;
   margin-bottom: 6vh;
-  
-  /* Effet glass moderne coordonné avec les dossiers */
   background: rgba(255, 255, 255, 0.05);
   border: 3px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
@@ -257,7 +233,6 @@ section {
     0 0 30px rgba(0, 0, 0, 0.3),
     0 8px 25px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
   transition: all 0.4s ease;
   filter: saturate(1.2) contrast(1.1);
   position: relative;
@@ -481,7 +456,7 @@ FIN CSS PRESTATIONS COMMENTÉ
   transition: filter 0.3s ease;
 }
 
-/* Mise en page de la section Projets */
+/* Projets */
 
 .conteneur-vignettes {
   display: flex;
@@ -524,7 +499,7 @@ FIN CSS PRESTATIONS COMMENTÉ
 
 
 
-/* Mise en page de la section Contact */
+/* Contact */
 
 .intro-text-contact {
   margin-bottom: 4vh;
@@ -532,7 +507,7 @@ FIN CSS PRESTATIONS COMMENTÉ
   font-size: 30px;
 }
 
-/* Contact Cards avec Glass Morphism */
+/* Contact Cards */
 .contact-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -609,7 +584,7 @@ FIN CSS PRESTATIONS COMMENTÉ
 
 .contact-info-card {
   flex: 1;
-  min-width: 0; /* Permet au contenu de se rétrécir */
+  min-width: 0;
 }
 
 .contact-info-card h3 {
@@ -625,8 +600,8 @@ FIN CSS PRESTATIONS COMMENTÉ
   font-weight: 500;
   font-size: 1rem;
   transition: color 0.3s ease;
-  word-break: break-all; /* Force la coupure des mots longs */
-  overflow-wrap: break-word; /* Alternative pour la compatibilité */
+  word-break: break-all;
+  overflow-wrap: break-word;
   display: block;
   line-height: 1.3;
 }
@@ -635,7 +610,7 @@ FIN CSS PRESTATIONS COMMENTÉ
   color: white;
 }
 
-/* Media queries pour les ordinateurs de bureau */
+/* Responsive Design */
 @media (max-width: 1200px) {
   * {
     font-size: 18px;
@@ -661,7 +636,7 @@ FIN CSS PRESTATIONS COMMENTÉ
     font-size: 20px;
   }
 
-  /* Contact Cards Responsive - Desktop */
+  /* Contact Cards - Desktop */
   .contact-cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -684,7 +659,7 @@ FIN CSS PRESTATIONS COMMENTÉ
   }
 }
 
-/* Ajout de media queries pour les écrans de taille moyenne (tablettes) */
+/* Tablet */
 @media screen and (max-width: 768px) {
   * {
     font-size: 16px;
@@ -760,7 +735,7 @@ FIN CSS PRESTATIONS COMMENTÉ
     font-size: 20px;
   }
 
-  /* Contact Cards Responsive - Tablet */
+  /* Contact Cards - Tablet */
   .contact-cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
@@ -898,7 +873,7 @@ FIN CSS PRESTATIONS COMMENTÉ
     font-size: 18px;
   }
 
-  /* Contact Cards Responsive - Mobile */
+  /* Contact Cards - Mobile */
   .contact-cards {
     grid-template-columns: 1fr;
     gap: 1rem;

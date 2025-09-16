@@ -1,18 +1,14 @@
 function setActiveNav() {
   const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link'); // Modifiez cette ligne
+  const navLinks = document.querySelectorAll('.nav-link');
   var titreNav = document.querySelector('.titre-nav a');
 
-  // Ajoute un écouteur d'événements au titre
   titreNav.addEventListener('click', function () {
-    // Réactive le défilement de la page principale
     document.body.style.overflow = 'auto';
   });
 
-  // Ajoute un écouteur d'événements à chaque lien de navigation
   navLinks.forEach((navLink) => {
     navLink.addEventListener('click', () => {
-      // Réactive le défilement de la page principale
       document.body.style.overflow = 'auto';
     });
   });
@@ -24,9 +20,7 @@ function setActiveNav() {
     const correspondingNavLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
     if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-      // Retirer active de tous les liens
       navLinks.forEach(link => link.classList.remove('active'));
-      // Ajouter active au lien correspondant
       if (correspondingNavLink) {
         correspondingNavLink.classList.add('active');
       }
@@ -39,14 +33,14 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const navLink = document.querySelector(
-          `.nav-link[href="#${entry.target.id}"]` // Modifiez cette ligne
+          `.nav-link[href="#${entry.target.id}"]`
         );
         if (navLink) {
           navLink.classList.add('active');
         }
       } else {
         const navLink = document.querySelector(
-          `.nav-link[href="#${entry.target.id}"]` // Modifiez cette ligne
+          `.nav-link[href="#${entry.target.id}"]`
         );
         if (navLink) {
           navLink.classList.remove('active');
@@ -63,22 +57,16 @@ document.querySelectorAll('section').forEach((section) => {
 
 document.addEventListener('scroll', setActiveNav);
 
-// -------------- Gestion du gradient dynamique ----------------
-
+// Gradient dynamique
 import { Gradient } from './Gradient.js';
 
-// Create your instance
 const gradient = new Gradient();
-
-// Call `initGradient` with the selector to your canvas
 gradient.initGradient('#gradient-canvas');
 
-// -------------- Gestion du custom cursor ----------------
-
+// Custom cursor
 const cursorDot = document.querySelector('[data-cursor-dot]');
 const cursorOutline = document.querySelector('[data-cursor-outline]');
 
-// Vérifier que les éléments existent avant d'ajouter les event listeners
 if (cursorDot && cursorOutline) {
   window.addEventListener('mousemove', (e) => {
     const posX = e.clientX;
@@ -96,39 +84,24 @@ if (cursorDot && cursorOutline) {
   });
 }
 
-/*
-===============================================
-CODE PRESTATIONS SUPPRIMÉ - 15 septembre 2025 
-Cause d'erreur: elements prestations n'existent plus
-===============================================
-*/
-
-// -------------- Gestion du menu hamburger ----------------
+// Menu mobile
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
-const menuLinks = document.querySelectorAll('.menu a'); // Sélectionner tous les liens du menu
+const menuLinks = document.querySelectorAll('.menu a');
 
-// Ouvrir/fermer le menu
 menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active'); // Transforme le hamburger en croix
-  menu.classList.toggle('active'); // Affiche ou masque le menu déroulant
+  menuToggle.classList.toggle('active');
+  menu.classList.toggle('active');
 });
 
-// Fermer le menu lorsqu'un lien est cliqué
 menuLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    menu.classList.remove('active'); // Masque le menu
-    menuToggle.classList.remove('active'); // Revenir au hamburger
+    menu.classList.remove('active');
+    menuToggle.classList.remove('active');
   });
 });
 
-// -------------- Code de débogage supprimé ----------------
-
-// ========================================
-// GESTION DU SYSTÈME DE NAVIGATION PAR STACKS
-// ========================================
-
-// Gestion des dossiers/stacks technologiques
+// Navigation par stacks
 document.addEventListener('DOMContentLoaded', function() {
   const stackFolders = document.querySelectorAll('.stack-folder');
   const stackContents = document.querySelectorAll('.stack-content');
@@ -137,44 +110,32 @@ document.addEventListener('DOMContentLoaded', function() {
     folder.addEventListener('click', function() {
       const stackType = this.getAttribute('data-stack');
       const targetContent = document.querySelector(`[data-content="${stackType}"]`);
-      
-      // Vérifier si ce dossier est déjà actif
       const isCurrentlyActive = this.classList.contains('active');
       
       if (isCurrentlyActive) {
-        // Si le dossier est déjà ouvert, le fermer avec animation
         this.classList.remove('active');
         if (targetContent) {
-          // Délai pour permettre l'animation de fermeture
           setTimeout(() => {
             targetContent.classList.remove('active');
           }, 150);
         }
       } else {
-        // Sinon, fermer tous les autres dossiers et ouvrir celui-ci
-        
-        // Retirer la classe active de tous les dossiers
         stackFolders.forEach(f => f.classList.remove('active'));
-        
-        // Masquer tous les contenus avec animation
         stackContents.forEach(content => {
           content.classList.remove('active');
         });
         
-        // Ajouter la classe active au dossier cliqué
         this.classList.add('active');
         
-        // Afficher le contenu correspondant avec un délai pour l'animation
         if (targetContent) {
           setTimeout(() => {
             targetContent.classList.add('active');
-          }, 200); // Légèrement plus long pour laisser le temps à l'ancien de se fermer
+          }, 200);
         }
       }
     });
   });
   
-  // Amélioration de l'effet hover sur les badges
   const badges = document.querySelectorAll('.badge');
   badges.forEach(badge => {
     badge.addEventListener('mouseenter', function() {
@@ -187,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Animation d'apparition des badges sur les vignettes
 const observerOptions = {
   threshold: 0.3,
   rootMargin: '0px 0px -50px 0px'
@@ -207,13 +167,11 @@ const badgeObserver = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observer toutes les vignettes de projets
 document.addEventListener('DOMContentLoaded', function() {
   const projectCards = document.querySelectorAll('.vignette-projet');
   projectCards.forEach(card => {
     badgeObserver.observe(card);
     
-    // Initialiser les badges en position cachée
     const badges = card.querySelectorAll('.badge');
     badges.forEach(badge => {
       badge.style.opacity = '0';
@@ -223,10 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// ========================================
-// SYSTÈME DE MODALES POUR LES PROJETS
-// ========================================
-
+/* Système de modales */
 class ProjectModal {
   constructor() {
     this.modal = document.getElementById('modal-overlay');
@@ -250,33 +205,19 @@ class ProjectModal {
   init() {
     if (!this.modal) return;
     
-    // Charger les données des projets
     this.loadProjectData();
-    
-    // Ajouter les event listeners
     this.bindEvents();
-    
-    // Marquer les vignettes comme pouvant ouvrir des modales
     this.attachModalTriggers();
   }
   
   loadProjectData() {
-    // Données des projets avec toutes les informations nécessaires
     this.projects = [
       {
         id: 'projet1',
         title: 'Site Vitrine WordPress - Luthière',
         badges: ['WordPress', 'PHP', 'MySQL', 'CSS3'],
         competence: 'Maîtrise',
-        description: `Ce projet consistait à créer un site vitrine pour une luthière artisanale. 
-        L'objectif était de présenter son travail de manière élégante et professionnelle, 
-        en mettant en valeur ses créations d'instruments de musique traditionnels.
-        
-        Le site inclut une galerie d'images, une présentation de l'artisane, 
-        et un système de contact pour les commandes personnalisées.
-        
-        Technologies utilisées : WordPress avec thème personnalisé, PHP pour les fonctionnalités 
-        spécifiques, MySQL pour la base de données, et CSS3 pour un design responsive moderne.`,
+        description: `Site vitrine pour une luthière artisanale avec galerie d'images, présentation de l'artisane et système de contact pour commandes personnalisées. Développé avec WordPress personnalisé et design responsive.`,
         images: [
           'images/screenshots/mh_1.png',
           'images/screenshots/mh.png'
@@ -287,19 +228,7 @@ class ProjectModal {
         title: 'Gestionnaire de Backlog Jeux Vidéo',
         badges: ['React', 'Node.js', 'MongoDB', 'Express'],
         competence: 'Avancé',
-        description: `Application MERN complète pour gérer sa collection de jeux vidéo et son backlog.
-        Cette application permet aux joueurs de suivre leurs jeux en cours, terminés, 
-        et ceux qu'ils souhaitent jouer.
-        
-        Fonctionnalités principales :
-        • Ajout et gestion de jeux dans différentes catégories
-        • Système de notation et commentaires
-        • Statistiques de progression
-        • Interface responsive et moderne
-        • Authentification utilisateur sécurisée
-        
-        Stack technique : React pour l'interface utilisateur, Node.js et Express pour l'API REST,
-        MongoDB pour la persistance des données, avec authentification JWT.`,
+        description: `Application MERN pour gérer sa collection de jeux vidéo et son backlog. Gestion de jeux par catégories, système de notation, statistiques de progression et authentification sécurisée.`,
         images: [
           'images/screenshots/weatherapp.png'
         ]
@@ -309,19 +238,7 @@ class ProjectModal {
         title: 'Projet Symfony/PostgreSQL',
         badges: ['Symfony', 'PHP', 'PostgreSQL'],
         competence: 'Apprentissage',
-        description: `Application web développée avec le framework Symfony, utilisant PostgreSQL 
-        comme système de gestion de base de données. Ce projet vise à approfondir les concepts 
-        du développement backend avec un framework professionnel.
-        
-        Objectifs d'apprentissage :
-        • Maîtrise de l'architecture MVC avec Symfony
-        • Gestion des entités et relations avec Doctrine ORM
-        • Création d'API REST sécurisées
-        • Implémentation de fonctionnalités d'authentification
-        • Tests unitaires et d'intégration
-        
-        Le projet simule une application de gestion métier avec différents rôles utilisateurs,
-        permissions granulaires, et interface d'administration complète.`,
+        description: `Application web développée avec Symfony et PostgreSQL. Architecture MVC, gestion des entités avec Doctrine ORM, API REST sécurisée et système d'authentification avec rôles utilisateurs.`,
         images: []
       },
       {
@@ -329,20 +246,7 @@ class ProjectModal {
         title: 'API REST Pokémon',
         badges: ['Node.js', 'Express', 'MySQL'],
         competence: 'Avancé',
-        description: `API REST développée en Node.js pour la gestion d'une base de données Pokémon.
-        Ce projet approfondit les compétences en développement backend et architecture API.
-        
-        Fonctionnalités de l'API :
-        • CRUD complet pour les Pokémons
-        • Système d'authentification avec JWT
-        • Middleware de validation des données
-        • Gestion des erreurs et logging
-        • Documentation automatique avec Swagger
-        • Tests d'intégration avec Jest
-        
-        Outils utilisés : Express.js, Sequelize ORM, bcrypt pour le hachage, 
-        jsonwebtoken pour l'authentification, et nodemon pour le développement.
-        Base de données MySQL avec relations complexes entre les entités.`,
+        description: `API REST Node.js pour gestion d'une base de données Pokémon. CRUD complet, authentification JWT, middleware de validation, documentation Swagger et tests d'intégration.`,
         images: [
           'images/screenshots/NodeJS_pokemon/code.png',
           'images/screenshots/NodeJS_pokemon/code2.png',
@@ -355,21 +259,7 @@ class ProjectModal {
         title: 'Site e-commerce JSAmazona',
         badges: ['React', 'Node.js', 'MongoDB', 'Express'],
         competence: 'Avancé',
-        description: `Plateforme e-commerce complète développée avec la stack MERN, inspirée d'Amazon.
-        Ce projet couvre tous les aspects d'une boutique en ligne moderne.
-        
-        Fonctionnalités principales :
-        • Catalogue produits avec recherche et filtres
-        • Panier d'achat et processus de commande
-        • Gestion des utilisateurs et profils
-        • Interface d'administration pour les vendeurs
-        • Système de paiement intégré
-        • Gestion des stocks et inventaire
-        • Système de reviews et ratings
-        
-        Architecture technique : Frontend React avec hooks et context API,
-        backend Express.js avec API REST, base de données MongoDB,
-        authentification JWT, intégration PayPal, et déploiement sur cloud.`,
+        description: `Plateforme e-commerce MERN inspirée d'Amazon. Catalogue produits, panier d'achat, gestion utilisateurs, interface d'administration, système de paiement PayPal et gestion des stocks.`,
         images: [
           'images/screenshots/jsamazona/jsamazona_1.png',
           'images/screenshots/jsamazona/jsamazona_2.png',
@@ -381,24 +271,7 @@ class ProjectModal {
         title: 'Les Connexions - site associatif',
         badges: ['WordPress', 'PHP', 'MySQL'],
         competence: 'Maîtrise',
-        description: `Site web pour une association locale, développé en étroite collaboration 
-        avec le client pour répondre à leurs besoins spécifiques de communication et gestion.
-        
-        Objectifs du projet :
-        • Présentation claire des activités de l'association
-        • Système d'inscription aux événements
-        • Galerie photo et actualités
-        • Espace membres avec contenu privé
-        • Interface d'administration simplifiée
-        
-        Gestion de projet :
-        • Discussions régulières avec le client
-        • Prototypage avec Figma
-        • Développement itératif avec validation
-        • Formation du client à l'administration
-        
-        Technologies : WordPress personnalisé, thème sur mesure, 
-        plugins spécifiques, optimisation SEO et performance.`,
+        description: `Site web pour association locale développé en collaboration client. Présentation des activités, système d'inscription aux événements, galerie photo, espace membres et interface d'administration.`,
         images: [
           'images/screenshots/les_connexions/les_connexions_1.png',
           'images/screenshots/les_connexions/les_connexions_2.png',
@@ -409,7 +282,6 @@ class ProjectModal {
   }
   
   attachModalTriggers() {
-    // Ajouter les event listeners aux vignettes avec data-modal="true"
     const modalTriggers = document.querySelectorAll('.vignette-projet[data-modal="true"]');
     
     modalTriggers.forEach(trigger => {
@@ -421,28 +293,23 @@ class ProjectModal {
         this.openModal(projectId);
       });
       
-      // Ajouter un indicateur visuel que la vignette peut ouvrir une modale
       trigger.style.cursor = 'pointer';
       trigger.title = 'Cliquer pour voir les détails du projet';
     });
   }
   
   bindEvents() {
-    // Fermeture de la modale
     this.closeBtn?.addEventListener('click', () => this.closeModal());
     
-    // Fermeture en cliquant sur l'overlay
     this.modal?.addEventListener('click', (e) => {
       if (e.target === this.modal) {
         this.closeModal();
       }
     });
     
-    // Navigation entre projets
     this.prevBtn?.addEventListener('click', () => this.previousProject());
     this.nextBtn?.addEventListener('click', () => this.nextProject());
     
-    // Gestion du clavier
     document.addEventListener('keydown', (e) => {
       if (!this.modal?.classList.contains('active')) return;
       
@@ -472,12 +339,10 @@ class ProjectModal {
   }
   
   populateModal(project) {
-    // Titre et badges
     if (this.modalTitle) {
       this.modalTitle.textContent = project.title;
     }
     
-    // Badges techniques avec mapping correct des noms de classes
     if (this.modalBadges) {
       const badgeClassMap = {
         'React': 'react',
@@ -498,19 +363,16 @@ class ProjectModal {
       }).join('');
     }
     
-    // Badge de compétence
     if (this.modalCompetenceBadge) {
       const competenceClass = project.competence.toLowerCase();
       this.modalCompetenceBadge.innerHTML = 
         `<span class="competence-badge competence-${competenceClass}">${project.competence}</span>`;
     }
     
-    // Description
     if (this.modalText) {
       this.modalText.innerHTML = project.description.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
     }
     
-    // Galerie d'images
     if (this.modalGallery) {
       this.modalGallery.innerHTML = project.images.map(image => 
         `<div class="modal-gallery-item">
@@ -523,13 +385,9 @@ class ProjectModal {
   showModal() {
     if (!this.modal) return;
     
-    // Empêcher le scroll du body
     document.body.style.overflow = 'hidden';
-    
-    // Afficher la modale avec animation
     this.modal.classList.add('active');
     
-    // Focus sur le bouton de fermeture pour l'accessibilité
     setTimeout(() => {
       this.closeBtn?.focus();
     }, 400);
@@ -538,12 +396,8 @@ class ProjectModal {
   closeModal() {
     if (!this.modal) return;
     
-    // Restaurer le scroll du body
     document.body.style.overflow = 'auto';
-    
-    // Masquer la modale avec animation
     this.modal.classList.remove('active');
-    
     this.currentProject = null;
   }
   
@@ -572,9 +426,7 @@ class ProjectModal {
   }
 }
 
-// Initialiser le système de modales quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', () => {
-  // Petit délai pour s'assurer que tous les autres event listeners sont attachés
   setTimeout(() => {
     new ProjectModal();
   }, 100);

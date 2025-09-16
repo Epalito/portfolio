@@ -25,13 +25,10 @@
   </head>
 
   <body>
-    <!-- Custom Cursor -->
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <!-- Conteneur pour la barre de navigation et la section d'accueil -->
     <div id="conteneur-fond">
-      <!-- Barre de navigation -->
       <nav>
         <h4 class="titre-nav">
           <a href="#accueil"
@@ -50,22 +47,21 @@
           <li><a class="nav-link" href="#contact">/Contact</a></li>
         </ul>
       </nav>
-      <!-- Bouton pour ouvrir/fermer le menu -->
+      
       <button class="menu-toggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Menu déroulant -->
       <div class="menu">
         <a href="#introduction" style="--order: 1">Introduction</a>
         <a href="#projets" style="--order: 2">Projets</a>
         <a href="#contact" style="--order: 3">Contact</a>
       </div>
     </div>
+    
     <div id="contenu">
-      <!-- Section Accueil -->
       <section id="accueil" class="scroll-blur">
         <header>
           <h1>Tommy Epal</h1>
@@ -73,14 +69,12 @@
         </header>
       </section>
 
-      <!-- Section Introduction -->
       <section id="introduction" class="scroll-blur">
         <img
           src="images/image_profil/Photo pro 3.jpg"
           alt="image de profil"
           class="image-profil"
         />
-        <!-- Contenu de la section -->
         <p>
           Passionné par deux domaines distincts - la nature et l'informatique -
           j'ai entamé mon parcours professionnel dans les sciences de la terre
@@ -101,34 +95,11 @@
         </p>
       </section>
 
-      <!-- Section Compétences 
-      <section id="competences" class="scroll-blur">
-        <div class="contenu-competences">
-          <h2>Compétences</h2>
-          <ul>
-            <li><i class="fas fa-code"></i>HTML5 - CSS3 - JavaScript</li>
-            <li><i class="fas fa-code"></i>React</li>
-            <li><i class="fas fa-code-branch"></i>NodeJs</li>
-            <li><i class="fas fa-database"></i>Gestion de base de données</li>
-            <li><i class="fas fa-pen"></i>Wordpress</li>
-            <li><i class="fas fa-pen"></i>Figma</li>
-          </ul>
-        </div>
-        <img
-          src="images/logos_competences/code-your-website-in-html-css-php-javascript.png"
-          alt="Description de l'image"
-          class="image-cadre"
-        />
-      </section>
--->
-
       <!-- Section Prestations supprimée - voir prestations-backup.html pour réactivation -->
 
-      <!-- Section Projets -->
       <section id="projets" name="projets" class="scroll-blur">
         <h2>Mes Projets</h2>
         
-        <!-- Navigation par stacks technologiques -->
         <div class="stack-navigation">
           <div class="stack-folder" data-stack="frontend">
             <div class="competence-badge expertise">
@@ -220,7 +191,6 @@
           </div>
         </div>
 
-        <!-- Conteneur des projets WordPress -->
         <div class="stack-content" data-content="wordpress">
           <div class="conteneur-vignettes">
             <div class="vignette-projet" data-projet="projet1" data-modal="true">
@@ -250,7 +220,6 @@
           </div>
         </div>
         
-        <!-- Conteneur des projets Applications Métier -->
         <div class="stack-content" data-content="backend">
           <div class="conteneur-vignettes">
             <div class="vignette-projet" data-projet="projet3" data-modal="true">
@@ -268,7 +237,6 @@
         </div>
       </section>
 
-      <!-- Section Contact -->
       <section id="contact" class="scroll-blur">
         <h2>Contact</h2>
         <p class="intro-text-contact">
@@ -341,26 +309,17 @@
       </section>
     </div>
 
-    <!-- Onglets de projets (masqués par défaut) -->
-
-
     <canvas id="gradient-canvas" data-transition-in></canvas>
 
-    <!-- ========================================= -->
-    <!-- STRUCTURE DES MODALES DE PROJETS -->
-    <!-- ========================================= -->
-    <!-- Modal overlay - couche d'arrière-plan -->
+    <!-- MODALES DE PROJETS -->
     <div id="modal-overlay" class="modal-overlay">
-      <!-- Conteneur principal de la modale -->
       <div class="modal-container">
-        <!-- Bouton de fermeture -->
         <button class="modal-close" aria-label="Fermer la modale">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 6L6 18M6 6l12 12"/>
           </svg>
         </button>
 
-        <!-- Navigation entre les projets -->
         <button class="modal-nav modal-nav-prev" aria-label="Projet précédent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 18l-6-6 6-6"/>
@@ -372,9 +331,7 @@
           </svg>
         </button>
 
-        <!-- Contenu de la modale -->
         <div class="modal-content">
-          <!-- Section hero avec titre et badges -->
           <div class="modal-hero">
             <div class="modal-hero-content">
               <h2 class="modal-title"></h2>
@@ -383,14 +340,12 @@
             </div>
           </div>
 
-          <!-- Section description -->
           <div class="modal-description">
             <div class="modal-description-content">
               <p class="modal-text"></p>
             </div>
           </div>
 
-          <!-- Section galerie d'images -->
           <div class="modal-gallery">
             <div class="modal-gallery-grid">
               <!-- Les images seront ajoutées dynamiquement par JavaScript -->
