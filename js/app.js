@@ -270,6 +270,17 @@ class ProjectModal {
         ]
       },
       {
+        id: 'projet7',
+        title: 'Site Team Motorsport',
+        badges: ['React', 'Node.js', 'MongoDB', 'Express'],
+        competence: 'Avancé',
+        description: `Site vitrine développé avec la stack MERN (MongoDB, Express, React, Node.js) pour une équipe de sport automobile. Choix volontaire de MERN plutôt que WordPress pour approfondir la maîtrise de la stack complète et créer une expérience utilisateur moderne et interactive avec gestion de données.`,
+        images: [
+          'images/screenshots/kairos_racing/kairos_racing_1.png',
+          'images/screenshots/kairos_racing/kairos_racing_2.png'
+        ]
+      },
+      {
         id: 'projet6',
         title: 'Site Associatif - Les Connexions',
         badges: ['WordPress', 'PHP', 'MySQL'],
@@ -356,6 +367,7 @@ class ProjectModal {
         'PHP': 'php',
         'MySQL': 'mysql',
         'CSS3': 'css',
+        'JavaScript': 'javascript',
         'Symfony': 'symfony',
         'PostgreSQL': 'postgresql'
       };
