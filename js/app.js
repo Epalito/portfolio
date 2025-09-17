@@ -194,6 +194,7 @@ class ProjectModal {
     this.modalCompetenceBadge = this.modal?.querySelector('.modal-competence-badge');
     this.modalText = this.modal?.querySelector('.modal-text');
     this.modalGallery = this.modal?.querySelector('.modal-gallery-grid');
+    this.modalProjectLinks = this.modal?.querySelector('.modal-project-links');
     
     this.currentProject = null;
     this.projects = [];
@@ -214,13 +215,15 @@ class ProjectModal {
     this.projects = [
       {
         id: 'projet1',
-        title: 'Site Vitrine WordPress - Luthière',
+        title: 'Site Vitrine - Luthière Artisanale',
         badges: ['WordPress', 'PHP', 'MySQL', 'CSS3'],
         competence: 'Maîtrise',
         description: `Site vitrine pour une luthière artisanale avec galerie d'images, présentation de l'artisane et système de contact pour commandes personnalisées. Développé avec WordPress personnalisé et design responsive.`,
+        link: 'https://clementineweber.com/',
         images: [
-          'images/screenshots/mh_1.png',
-          'images/screenshots/mh.png'
+          'images/screenshots/clementineweber/clementineweber_1.png',
+          'images/screenshots/clementineweber/clementineweber_2.png',
+          'images/screenshots/clementineweber/clementineweber_3.png'
         ]
       },
       {
@@ -268,7 +271,7 @@ class ProjectModal {
       },
       {
         id: 'projet6',
-        title: 'Les Connexions - site associatif',
+        title: 'Site Associatif - Les Connexions',
         badges: ['WordPress', 'PHP', 'MySQL'],
         competence: 'Maîtrise',
         description: `Site web pour association locale développé en collaboration client. Présentation des activités, système d'inscription aux événements, galerie photo, espace membres et interface d'administration.`,
@@ -363,12 +366,6 @@ class ProjectModal {
       }).join('');
     }
     
-    if (this.modalCompetenceBadge) {
-      const competenceClass = project.competence.toLowerCase();
-      this.modalCompetenceBadge.innerHTML = 
-        `<span class="competence-badge competence-${competenceClass}">${project.competence}</span>`;
-    }
-    
     if (this.modalText) {
       this.modalText.innerHTML = project.description.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
     }
@@ -379,6 +376,16 @@ class ProjectModal {
           <img src="${image}" alt="${project.title}" loading="lazy">
         </div>`
       ).join('');
+    }
+    
+    if (this.modalProjectLinks && project.link) {
+      this.modalProjectLinks.innerHTML = `
+        <div class="project-links">
+          <a href="${project.link}" target="_blank" rel="noopener">🔗 Voir le site en ligne</a>
+        </div>
+      `;
+    } else if (this.modalProjectLinks) {
+      this.modalProjectLinks.innerHTML = '';
     }
   }
   
