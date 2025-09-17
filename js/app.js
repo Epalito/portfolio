@@ -238,10 +238,10 @@ class ProjectModal {
       },
       {
         id: 'projet3',
-        title: 'Projet Symfony/PostgreSQL',
+        title: 'Plateforme de Gestion de Cours',
         badges: ['Symfony', 'PHP', 'PostgreSQL'],
         competence: 'Apprentissage',
-        description: `Application web développée avec Symfony et PostgreSQL. Architecture MVC, gestion des entités avec Doctrine ORM, API REST sécurisée et système d'authentification avec rôles utilisateurs.`,
+        description: `Mini-clone de plateforme universitaire développé avec Symfony et PostgreSQL. Gestion des cours, étudiants et enseignants avec architecture MVC, Doctrine ORM, API REST sécurisée et système d'authentification par rôles (admin/professeur/étudiant).`,
         images: []
       },
       {
@@ -437,4 +437,25 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     new ProjectModal();
   }, 100);
+
+  // Rendre les cartes contact entièrement cliquables
+  const contactCards = document.querySelectorAll('.contact-card');
+  contactCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Éviter le double-clic si on clique directement sur le lien
+      if (e.target.tagName === 'A') return;
+      
+      // Trouver le lien dans la carte et le suivre
+      const link = card.querySelector('a');
+      if (link) {
+        if (link.href.startsWith('mailto:')) {
+          // Pour les liens email, ouvrir directement
+          window.location.href = link.href;
+        } else {
+          // Pour les liens externes, ouvrir dans un nouvel onglet
+          window.open(link.href, '_blank');
+        }
+      }
+    });
+  });
 });
