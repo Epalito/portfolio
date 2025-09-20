@@ -36,6 +36,11 @@
   </head>
 
   <body>
+    <!-- Lightbox overlay -->
+    <div id="lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,20,0.95);z-index:99999;justify-content:center;align-items:center;cursor:pointer;">
+      <img id="lightbox-img" src="" alt="Agrandissement" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 0 40px #000;" />
+      <span id="lightbox-close" style="position:absolute;top:32px;right:48px;font-size:2.5rem;color:#fff;cursor:pointer;font-family:sans-serif;">&times;</span>
+    </div>
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 

@@ -1,3 +1,32 @@
+// Lightbox pour agrandir les images des modales
+document.addEventListener('DOMContentLoaded', function() {
+  const gallery = document.querySelector('.modal-gallery-grid');
+  const overlay = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  if (gallery && overlay && lightboxImg && closeBtn) {
+    gallery.addEventListener('click', function(e) {
+      const target = e.target;
+      if (target.tagName === 'IMG') {
+        lightboxImg.src = target.src;
+        overlay.style.display = 'flex';
+      }
+    });
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay || e.target === closeBtn) {
+        overlay.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (overlay.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+        overlay.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+  }
+});
 function setActiveNav() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
