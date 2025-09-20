@@ -259,7 +259,7 @@ class ProjectModal {
       },
       {
         id: 'projet5',
-        title: 'Site e-commerce JSAmazona',
+  title: "Site e-commerce inspiré d'Amazon",
         badges: ['React', 'Node.js', 'MongoDB', 'Express'],
         competence: 'Avancé',
         description: `Plateforme e-commerce MERN inspirée d'Amazon. Catalogue produits, panier d'achat, gestion utilisateurs, interface d'administration, système de paiement PayPal et gestion des stocks.`,
@@ -404,9 +404,14 @@ class ProjectModal {
   showModal() {
     if (!this.modal) return;
     
+    // Compensation du décalage de la scrollbar
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
     document.body.style.overflow = 'hidden';
     this.modal.classList.add('active');
-    
+
     setTimeout(() => {
       this.closeBtn?.focus();
     }, 400);
@@ -415,9 +420,10 @@ class ProjectModal {
   closeModal() {
     if (!this.modal) return;
     
-    document.body.style.overflow = 'auto';
-    this.modal.classList.remove('active');
-    this.currentProject = null;
+  document.body.style.overflow = 'auto';
+  document.body.style.paddingRight = '';
+  this.modal.classList.remove('active');
+  this.currentProject = null;
   }
   
   previousProject() {
