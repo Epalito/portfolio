@@ -1,0 +1,18 @@
+Intégration OverlayScrollbars pour un test propre :
+
+1. Ajout des CDN OverlayScrollbars dans <head> :
+   - CSS : https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.3/css/OverlayScrollbars.min.css
+   - JS : https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.3/js/OverlayScrollbars.min.js
+
+2. Initialisation JS dans <body> :
+   - OverlayScrollbars(document.body, { className: 'os-theme-dark', scrollbars: { autoHide: 'leave' } });
+
+3. Personnalisation CSS :
+   - .os-scrollbar-track { background: transparent !important; }
+   - .os-scrollbar-thumb { background: #bfc6cc !important; border-radius: 6px !important; }
+
+4. Retirer toutes les règles et scripts liés à SimpleBar pour éviter les conflits.
+
+5. Tester le rendu et l’absence de track visible.
+
+6. Adapter la cible si besoin (body, .modal-content, etc.).

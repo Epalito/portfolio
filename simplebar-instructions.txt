@@ -1,0 +1,25 @@
+Intégration SimpleBar (méthode CDN, simple et professionnelle) :
+
+1. Ajout du CSS SimpleBar dans le <head> de index.html :
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css" />
+
+2. Ajout du JS SimpleBar avant la fermeture du <body> :
+<script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+
+3. Ajout de l'attribut data-simplebar sur le conteneur à scroller (ici <body>) :
+<body data-simplebar>
+
+4. Personnalisation du thumb via CSS :
+.simplebar-scrollbar:before {
+  background: #bfc6cc;
+  border-radius: 6px;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
+5. La track est masquée par défaut, seul le thumb est visible.
+
+---
+
+Je vais maintenant appliquer ces étapes dans index.html et css/styles.css.
